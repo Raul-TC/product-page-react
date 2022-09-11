@@ -15,7 +15,13 @@ module.exports = {
         next: "url('/src/assets/icon-next.svg')",
         minus: "url('/src/assets/icon-minus.svg')",
         minusDisabled: "url('/src/assets/icon-minus-disabled.svg')",
-        plus: "url('/src/assets/icon-plus.svg')"
+        plus: "url('/src/assets/icon-plus.svg')",
+        thumb1: "url('/src/assets/image-product-1-thumbnail.jpg')",
+        thumb2: "url('/src/assets/image-product-2-thumbnail.jpg')",
+        thumb3: "url('/src/assets/image-product-3-thumbnail.jpg')",
+        thumb4: "url('/src/assets/image-product-4-thumbnail.jpg')",
+        closeModal: "url('/src/assets/icon-close.svg')",
+        closeModalHover: "url('/src/assets/icon-close-hover.svg')"
       }
     }
   },

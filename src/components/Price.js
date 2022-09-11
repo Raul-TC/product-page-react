@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Price = () => {
+const Price = ({ isMobile }) => {
   return (
-    <div className='flex w-full justify-between items-center mt-6'>
+    <div className={`${isMobile && 'flex justify-between items-center w-full'} mt-6`}>
 
-      <div className='flex items-center justify-between'>
+      <div className={`${isMobile && 'justify-between'} flex items-center`}>
         <span className='text-3xl font-bold'>$125.00</span>
         <span className='ml-3 bg-orange-100 text-orange-600 font-bold py-1 px-2 rounded-md'>50%</span>
       </div>

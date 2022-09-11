@@ -4,6 +4,7 @@ import CompanyName from './components/CompanyName'
 import { Counter } from './components/Counter'
 import Menu from './components/Menu'
 import MenuCart from './components/MenuCart'
+import ModalSlider from './components/ModalSlider'
 import Price from './components/Price'
 import ProductDescription from './components/ProductDescription'
 import ProductName from './components/ProductName'
@@ -15,6 +16,8 @@ function App () {
   const [menuCart, setMenuCart] = useState(false)
   const [counter, setCounter] = useState(0)
   const [quantity, setQuantity] = useState(counter)
+  const [modal, setModal] = useState(false)
+  const [counterImages, setCounterImages] = useState(0)
   useEffect(() => {
     if (window.matchMedia('(max-width:1024px)').matches) {
       console.info('Responsive')
@@ -40,16 +43,29 @@ function App () {
           </div>
         </div>
       </header>
-      <main className='max-w-[100%] w-full h-[80vh] m-auto sm:relative'>
+      <main className='w-full h-auto m-auto md:mt-[6rem] sm:relative md:w-[80%] flex flex-col md:flex-row md:items-center md:justify-between md:gap-6'>
+        {modal && <ModalSlider isMobile={isMobile} setModal={setModal} counterImages={counterImages} setCounterImages={setCounterImages} />}
         {menuCart && <MenuCart counter={quantity} setCounter={setCounter} setQuantity={setQuantity} setMenuCart={setMenuCart} />}
-        <Slider />
-        <div className='w-[90%] m-auto'>
+        <Slider isMobile={isMobile} setModal={setModal} counterImages={counterImages} setCounterImages={setCounterImages} />
+        <div className='w-[90%] m-auto md:w-[40%]'>
           <CompanyName />
           <ProductName />
           <ProductDescription />
-          <Price />
-          <Counter counter={counter} setCounter={setCounter} />
-          <Button counter={counter} setQuantity={setQuantity} setMenuCart={setMenuCart} />
+          <Price isMobile={isMobile} />
+          {isMobile
+            ? (
+              <>
+                <Counter counter={counter} setCounter={setCounter} isMobile={isMobile} />
+                <Button counter={counter} setQuantity={setQuantity} setMenuCart={setMenuCart} isMobile={isMobile} />
+
+              </>
+              )
+            : (
+              <div className='flex gap-4'>
+                <Counter counter={counter} setCounter={setCounter} isMobile={isMobile} />
+                <Button counter={counter} setQuantity={setQuantity} setMenuCart={setMenuCart} isMobile={isMobile} />
+
+              </div>)}
         </div>
       </main>
     </>
