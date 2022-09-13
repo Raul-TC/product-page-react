@@ -2,13 +2,13 @@
 
 ### Screenshot
 
-![](./src/assets/MainPage.png)
-![](./src/assets/MainPage_DarkMode.png)
+![](./src/assets/desktop-design.png)
+![](./src/assets/mobile-design.png)
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/flags-challenge-with-react-aKQGkOCW8P](https://www.frontendmentor.io/solutions/flags-challenge-with-react-aKQGkOCW8P)
-- Live Site URL: [https://countryflagsfrontendmentor.netlify.app/#/flags](https://countryflagsfrontendmentor.netlify.app/#/flags)
+- Solution URL: [https://www.frontendmentor.io/solutions/ecommerce-product-page-with-react-and-tailwind-css-qoNj6h7Sli](https://www.frontendmentor.io/solutions/ecommerce-product-page-with-react-and-tailwind-css-qoNj6h7Sli)
+- Live Site URL: [https://e-commerce-product-page-react.netlify.app/](https://e-commerce-product-page-react.netlify.app/)
 
 ```js
 const showMessage = () => {
