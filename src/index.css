@@ -13,3 +13,7 @@
 body {
   font-family: 'Kumbh Sans', sans-serif;
 }
+
+li {
+  line-height: 80px;
+}

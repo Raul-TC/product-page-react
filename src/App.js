@@ -32,14 +32,17 @@ function App () {
       {menu && <Menu menu={menu} setMenu={setMenu} />}
       <header className='bg-slate-50 border-b-2 border-gray-200 '>
         <div className='h-14 flex px-6 items-center justify-between sm:max-w-[1440px] sm:h-[80px] sm:m-auto'>
-          <div className='flex items-center justify-center'>
+          <div className='flex items-center justify-center h-full'>
             {isMobile && <div onClick={() => setMenu(!menu)} className='menu-icon bg-icon-hamburger h-[38px] w-4 bg-no-repeat bg-center bg-contain mr-3 ' />}
             <h1 className='text-3xl font-bold m-0 p-0 leading-none mr-12 tracking-tighter'>sneakers</h1>
             {isMobile ? null : <Menu isMobile={isMobile} />}
           </div>
           <div className='flex items-center justify-between h-7 sm:h-11 '>
-            <span onClick={() => setMenuCart(!menuCart)} className='bg-icon-cart h-6 w-7 bg-no-repeat bg-contain bg-center mr-5 sm:w-5 sm:h-4' />
-            <div className='bg-user h-6 w-6 bg-no-repeat bg-center bg-cover sm:h-9 sm:w-9' />
+            <div onClick={() => setMenuCart(!menuCart)} className=' relative bg-icon-cart h-6 w-7 bg-no-repeat bg-contain bg-center mr-5 sm:w-5 sm:h-4 cursor-pointer'>
+              <span className=' absolute w-6 h-4 bg-orange-500  rounded-full top-0 right-0 -mt-2 -mr-4 flex items-center justify-center text-xs text-white'>{quantity}</span>
+
+            </div>
+            <div className='bg-user h-6 w-6 bg-no-repeat bg-center bg-cover sm:h-9 sm:w-9 md:hover:border-orange-400 md:hover:border-2 rounded-full cursor-pointer' />
           </div>
         </div>
       </header>

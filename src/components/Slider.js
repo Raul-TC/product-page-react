@@ -35,7 +35,7 @@ const Slider = ({ isMobile, setModal, counterImages, setCounterImages }) => {
           </>
 
         )}
-        <img onClick={() => isMobile ? null : setModal(true)} className='h-full w-full object-cover md:rounded-xl' src={images[counterImages]} alt='' />
+        <img onClick={() => isMobile ? null : setModal(true)} className='h-full w-full object-cover md:rounded-xl cursor-pointer' src={images[counterImages]} alt='' />
         {isMobile && (
           <>
             <div
@@ -53,10 +53,23 @@ const Slider = ({ isMobile, setModal, counterImages, setCounterImages }) => {
       {!isMobile &&
         <>
           <div className='w-[60%] h-[7rem] m-auto mt-8 flex justify-between '>
-            <span onClick={() => setCounterImages(0)} className='bg-thumb2 w-[23%] bg-cover bg-no-repeat rounded-xl cursor-pointer' />
-            <span onClick={() => setCounterImages(1)} className='bg-thumb1 w-[23%] bg-cover bg-no-repeat rounded-xl cursor-pointer' />
-            <span onClick={() => setCounterImages(2)} className='bg-thumb3 w-[23%] bg-cover bg-no-repeat rounded-xl cursor-pointer' />
-            <span onClick={() => setCounterImages(3)} className='bg-thumb4 w-[23%] bg-cover bg-no-repeat rounded-xl cursor-pointer' />
+            <div onClick={() => setCounterImages(0)} className=' block w-[23%] h-full rounded-xl cursor-pointer relative '>
+              <span className=' block bg-thumb1 w-full h-full bg-cover rounded-xl bg-no-repeat' />
+              <div className={`${counterImages === 0 ? 'bg-[#e6e3e370]' : ''} absolute rounded-xl left-0 right-0 bottom-0 top-0 hover:bg-[#e6e3e370]`} />
+            </div>
+            <div onClick={() => setCounterImages(1)} className=' block w-[23%] h-full rounded-xl cursor-pointer relative'>
+              <span className='block bg-thumb2 w-full h-full bg-cover bg-no-repeat rounded-xl cursor-pointer' />
+              <div className={`${counterImages === 1 ? 'bg-[#e6e3e370]' : ''} absolute rounded-xl left-0 right-0 bottom-0 top-0 hover:bg-[#e6e3e370]`} />
+            </div>
+            <div onClick={() => setCounterImages(2)} className=' block w-[23%] h-full rounded-xl cursor-pointer relative'>
+              <span className='block bg-thumb3 w-full h-full bg-cover bg-no-repeat rounded-xl cursor-pointer' />
+              <div className={`${counterImages === 2 ? 'bg-[#e6e3e370]' : ''} absolute rounded-xl left-0 right-0 bottom-0 top-0 hover:bg-[#e6e3e370]`} />
+            </div>
+            <div onClick={() => setCounterImages(3)} className=' block w-[23%] h-full rounded-xl cursor-pointer relative'>
+              <span className='block bg-thumb4 w-full h-full bg-cover bg-no-repeat rounded-xl cursor-pointer' />
+              <div className={`${counterImages === 3 ? 'bg-[#e6e3e370]' : ''} absolute rounded-xl left-0 right-0 bottom-0 top-0 hover:bg-[#e6e3e370]`} />
+            </div>
+
           </div>
 
         </>}
